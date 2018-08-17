@@ -1,4 +1,4 @@
-package pageobjects;
+package pageobjects.FE;
 
 import support.CommonAction;
 import org.openqa.selenium.WebDriver;
@@ -82,6 +82,7 @@ public class FEBasicInformationVisaPage {
 
     public void chooseDate(String date){
         CommonAction common = new CommonAction();
+        common.waitForElementVisible(ddlMonth);
         String [] arrayDate = date.split("-");
         common.clickAndWait(ddlMonth);
         common.selectOptionByValue(ddlMonth, arrayDate[1]);
@@ -90,5 +91,6 @@ public class FEBasicInformationVisaPage {
         common.clickAndWait(ddlYear);
         common.selectOptionByText(ddlYear, arrayDate[0]);
         common.clickAndWait(btnSave);
+        common.waitForElementVisible(btnPassportExpiration);
     }
 }

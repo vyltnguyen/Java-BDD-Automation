@@ -3,9 +3,9 @@ package testcase;
 import support.CommonAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pageobjects.BEAddNewHotelPage;
-import pageobjects.BEHotelManagementPage;
-import pageobjects.BELoginPage;
+import pageobjects.BE.BEAddNewHotelPage;
+import pageobjects.BE.BEHotelManagementPage;
+import pageobjects.BE.BELoginPage;
 import support.Driver;
 
 public class BE004CreateNewHotelSuccessfully {

@@ -1,4 +1,4 @@
-package pageobjects;
+package pageobjects.FE;
 
 import support.Driver;
 import org.openqa.selenium.By;

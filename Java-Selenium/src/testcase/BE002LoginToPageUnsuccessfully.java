@@ -2,7 +2,7 @@ package testcase;
 
 import support.CommonAction;
 import org.openqa.selenium.WebDriver;
-import pageobjects.BELoginPage;
+import pageobjects.BE.BELoginPage;
 import support.Driver;
 
 public class BE002LoginToPageUnsuccessfully {

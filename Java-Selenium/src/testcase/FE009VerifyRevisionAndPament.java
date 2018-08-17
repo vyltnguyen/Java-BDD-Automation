@@ -4,8 +4,8 @@ import support.CommonAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import pageobjects.FEBasicInformationVisaPage;
-import pageobjects.FERevisionAndPaymentPage;
+import pageobjects.FE.FEBasicInformationVisaPage;
+import pageobjects.FE.FERevisionAndPaymentPage;
 import support.Driver;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -70,22 +70,15 @@ public class FE009VerifyRevisionAndPament {
         common.setText(basicInformationVisaPage.txtLastName, lastName);
         common.selectOptionByText(basicInformationVisaPage.ddlNationality, nationality);
         common.clickAndWait(basicInformationVisaPage.btnBirthday);
-        Thread.sleep(2000);
         basicInformationVisaPage.chooseDate(birthday);
         common.selectOptionByText(basicInformationVisaPage.ddlGender, gender);
         common.setText(basicInformationVisaPage.txtPassport, passportNumber);
         common.clickAndWait(basicInformationVisaPage.btnPassportIssued);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        Thread.sleep(2000);
         basicInformationVisaPage.chooseDate(passportIssued);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         Thread.sleep(2000);
         common.clickAndWait(basicInformationVisaPage.btnPassportExpiration);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        Thread.sleep(2000);
         basicInformationVisaPage.chooseDate(passportExpiration);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        Thread.sleep(2000);
+        common.waitForElementVisible(basicInformationVisaPage.ddlVisaType);
         common.selectOptionByIndex(basicInformationVisaPage.ddlVisaType, 1);
         String visaType = basicInformationVisaPage.ddlVisaType.getAttribute("textContent"); //Get Visa Type
 

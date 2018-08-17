@@ -9,7 +9,7 @@ public class Driver {
     private static WebDriver driver;
 
     public static WebDriver DriverChrome(){
-        if (driver == null){
+        if (driver == null || driver.toString().contains("null")){
             String currentDir = System.getProperty("user.dir") + "\\Driver\\chromedriver.exe";
             System.setProperty("webdriver.chrome.driver", currentDir);
             driver = new ChromeDriver();
